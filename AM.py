@@ -1,5 +1,6 @@
 import math
 import datetime
+import sys
 
 #information Collection
 total_hours_possible = float(input("How many hours are possible in the course?: "))
@@ -35,14 +36,17 @@ seconds = (time*3600) % 60
 rounded = round(hours_needed, 2)
 percent_rounded = round(current_percent, 2)
 
-if current_percent < percent_goal :
-    print("With your goal of" ,percent_goal,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,))
-else :
-    print()
-    
-if current_percent > percent_goal :
-    print("Your current percent is",percent_rounded,". So you do not need to make up any more time.")
-else : 
-    print()
-    
-    
+#if current_percent < percent_goal :
+#    goals_not_met = print("With your goal of" ,percent_goal,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,))
+#elif current_percent > percent_goal :
+#    goals_met = print("Your current percent is",percent_rounded,". So you do not need to make up any more time.")
+
+#print to console    
+print('Analyzing yours goals, please check the text file Hours_to_makeup')
+
+#print to file
+with open('Hours_to_makeup', 'w') as f:
+    if current_percent < percent_goal :
+        print("With your goal of" ,percent_goal,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,), file=f)
+    elif current_percent > percent_goal :
+        print("Your current percent is",percent_rounded,". So you do not need to make up any more time.",file=f)
