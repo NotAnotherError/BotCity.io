@@ -33,6 +33,7 @@ minutes = (time*60) % 60
 seconds = (time*3600) % 60
 
 rounded = round(hours_needed, 2)
+percent_rounded = round(current_percent, 2)
 
 if current_percent < percent_goal :
     print("With your goal of" ,percent_goal,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,))
@@ -40,7 +41,7 @@ else :
     print()
     
 if current_percent > percent_goal :
-    print("Your current percent is",current_percent,". So you do not need to make up any time.")
+    print("Your current percent is",percent_rounded,". So you do not need to make up any more time.")
 else : 
     print()
     
