@@ -24,7 +24,7 @@ current_percent = current_decimal * 100
 #Final Maths
 possible_absent_hours = total_hours_possible * percent_decimal
 max_absent_hours = total_hours_possible - possible_absent_hours
-hours_needed = total_hours_missed - max_absent_hours
+hours_needed = total_hours_missed - max_absent_hours - uo_hours
     
 #convert the hours needed back from decimal to hours and minutes, and formatting
 time = hours_needed
