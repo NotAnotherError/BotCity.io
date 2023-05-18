@@ -47,6 +47,6 @@ print('Analyzing yours goals, please check the text file Hours_to_makeup')
 #print to file
 with open('Hours_to_makeup', 'w') as f:
     if current_percent < percent_goal :
-        print("With your goal of" ,percent_goal,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,), file=f)
+        print("With your goal of" ,percent_goal,"% you are at ",percent_rounded,"% you still need to make up" ,rounded,"hours as a decimal, or ""%d hours and %02d minutes." % (hours, minutes,), file=f)
     elif current_percent > percent_goal :
         print("Your current percent is",percent_rounded,". So you do not need to make up any more time.",file=f)
